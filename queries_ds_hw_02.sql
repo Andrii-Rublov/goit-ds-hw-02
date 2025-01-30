@@ -1,12 +1,3 @@
-import sqlite3
-
-def execute_query(sql: str) -> list:
-    with sqlite3.connect('tasks_management.db') as con:
-        cur = con.cursor()
-        cur.execute(sql)
-        return cur.fetchall()
-
-sql = """
 -- 1st hw point--
 select t.id as task_id, t.title, t.description as task_description, u.id as user_id, u.fullname
 from tasks as t
@@ -108,7 +99,11 @@ from users as u
 left join tasks as t on t.user_id = u.id
 group by u.fullname
 order by u.id;
-"""
 
-print(execute_query(sql))
+
+
+
+
+
+
 
